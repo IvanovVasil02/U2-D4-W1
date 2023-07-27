@@ -19,32 +19,13 @@
           attenzione, meticolosità, precisione
           <br />
           ed un pizzico di originalità
-          <span class="web">interfacce web</span>
-          <span class="app">single page app</span>
-          <span class="native">app native</span>
+          <span class="parole">
+            <i>interfacce web</i>
+            <i>single page app</i>
+            <i>app native</i>
+          </span>
         </p>
-        <p>Parole:</p>
-
-        <span class="parole">
-          <i class="button-web" onclick="fade(event)">interfacce web</i>
-          <i class="button-app" onclick="fade(event)">single page app</i>
-          <i class="button-native" onclick="fade(event)">app native</i>
-        </span>
       </div>
     </main>
-
-    <script>
-      const fade = (evt) => {
-        const span = document.querySelectorAll("span");
-
-        span.forEach((element) => element.classList.remove("visible"));
-
-        const classButton = evt.target.className;
-        const classWord = classButton.split("-");
-        const className = "." + classWord[1];
-        const word = document.querySelector(className);
-        word.classList.add("visible");
-      };
-    </script>
   </body>
 </html>
