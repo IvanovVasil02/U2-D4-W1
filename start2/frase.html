@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Esempio di testo a rotazione</title>
+    <meta name="description" content="Creazione di uno slogan con testo a rotazione sfruttando le animazioni CSS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="frase.css" />
+  </head>
+  <body>
+    <main>
+      <div id="testoAlternato">
+        <p>
+          Realizziamo con cura, passione
+          <br />
+          attenzione, meticolosità, precisione
+          <br />
+          ed un pizzico di originalità
+          <span class="web">interfacce web</span>
+          <span class="app">single page app</span>
+          <span class="native">app native</span>
+        </p>
+        <p>Parole:</p>
+
+        <span class="parole">
+          <i class="button-web" onclick="fade(event)">interfacce web</i>
+          <i class="button-app" onclick="fade(event)">single page app</i>
+          <i class="button-native" onclick="fade(event)">app native</i>
+        </span>
+      </div>
+    </main>
+
+    <script>
+      const fade = (evt) => {
+        const span = document.querySelectorAll("span");
+
+        span.forEach((element) => element.classList.remove("visible"));
+
+        const classButton = evt.target.className;
+        const classWord = classButton.split("-");
+        const className = "." + classWord[1];
+        const word = document.querySelector(className);
+        word.classList.add("visible");
+      };
+    </script>
+  </body>
+</html>
